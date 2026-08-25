@@ -25,4 +25,4 @@ jobs:
           EMAIL_EXPEDITEUR: ${{ secrets.EMAIL_EXPEDITEUR }}
           MOT_DE_PASSE_APPLICATION: ${{ secrets.MOT_DE_PASSE_APPLICATION }}
           EMAIL_DESTINATAIRE: ${{ secrets.EMAIL_DESTINATAIRE }}
-        run: python surveillance.py
+        run: python -u surveillance.py
