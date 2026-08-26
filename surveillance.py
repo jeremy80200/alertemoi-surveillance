@@ -6,13 +6,10 @@ from email.mime.text import MIMEText
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-URL_A_SURVEILLER = "https://www.rdv-prefecture.interieur.gouv.fr/rdvpref/reservation/demarche/17660/"
+URL_A_SURVEILLER = "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
 
 TEXTES_INDISPONIBILITE = [
-    "aucun créneau disponible",
-    "aucune disponibilité",
-    "pas de créneau",
-    "aucun rendez-vous disponible",
+    "out of stock",
 ]
 
 EMAIL_EXPEDITEUR = os.environ["EMAIL_EXPEDITEUR"]
