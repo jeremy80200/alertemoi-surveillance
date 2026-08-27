@@ -21,8 +21,8 @@ PORT_SMTP = 587
 
 def verifier_disponibilite(url):
     headers = {"User-Agent": "AlerteMoi-Prototype/1.0"}
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
+    reponse = requests.get(url, headers=headers, timeout=15)
+    reponse.raise_for_status()
     soup = BeautifulSoup(reponse.text, "html.parser")
     texte_page = soup.get_text(separator=" ", strip=True).lower()
 
