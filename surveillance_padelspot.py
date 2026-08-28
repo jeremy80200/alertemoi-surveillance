@@ -8,7 +8,7 @@ from datetime import datetime
 URL_API = "https://padelspot.app/api/public/explore"
 
 PARAMETRES = {
-    "city": "paris",
+    "city": "bordeaux",
     "date": "2026-08-29",
     "time": "20:00",
 }
