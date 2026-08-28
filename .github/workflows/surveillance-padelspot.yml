@@ -1,0 +1,28 @@
+name: Surveillance Padelspot
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les librairies
+        run: pip install requests
+
+      - name: Lancer la surveillance
+        env:
+          EMAIL_EXPEDITEUR: ${{ secrets.EMAIL_EXPEDITEUR }}
+          MOT_DE_PASSE_APPLICATION: ${{ secrets.MOT_DE_PASSE_APPLICATION }}
+          EMAIL_DESTINATAIRE: ${{ secrets.EMAIL_DESTINATAIRE }}
+        run: python -u surveillance_padelspot.py
